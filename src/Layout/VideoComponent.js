@@ -3,20 +3,20 @@ import {withStyles} from '@material-ui/core/styles';
 import {Container, Grid, Typography} from '@material-ui/core';
 import ReactPlayer from 'react-player/youtube'
 import Header from './Header'
-import Nav from './Nav';
 
 const useStyles = theme => ({
   cont: {
     marginLeft: 24,
-    backgroundColor: 'red'
   },
   mainContainer: {
-    height: '100vh',
-    backgroundColor: 'green',
+    height: '100%',
+    position: 'absolute'
   },
-  videoContainer: {
+  vidContainer: {
+    marginTop: '88.2px',
+    margin: '5vh',
+  },
 
-  }
 });
 
 class VideoComponent extends React.Component {
@@ -29,26 +29,17 @@ class VideoComponent extends React.Component {
       logo: '',
     }
   }
-  vid_inf = (props) => {
-    fetch('https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id='+(window.location.href).split("/")[4]+'&key=AIzaSyDChwSyYbFWJl2LJOgBbSwBcs6WAxb9Qv4').then(response => response.json()).then(data => {
-      var _data = {id: 0, channelTitle: data['items'][0]['snippet']['channelTitle'],
-        title: data['items'][0]['snippet']['title'],
-        publishedAt: data['items'][0]['snippet']['publishedAt'],
-        desc: data['items'][0]['snippet']['localized']['description'],
-      channelId: data['items'][0]['snippet']['channelId']};
-      this.setState({vinf: _data});
-    }).catch(err => alert("Wrong!ffff"))
-  }
 
   render() {
     const {classes} = this.props;
 
     return (<div>
-      <Header>
-        <Nav/>
-      </Header>
+      <Header></Header>
+      <div style={{background: 'red', position: 'absolute', width: '100vw', height: '100vh', opacity: 0.5}}></div>
       <div className={classes.mainContainer}>
-        <ReactPlayer width="100%" height="80%" url={'https://www.youtube.com/watch?v=' + (window.location.href).split("/")[4]}/>
+        <div className={classes.vidContainer}>
+          <ReactPlayer width="85vw" height="85vh" url={'https://www.youtube.com/watch?v=' + (window.location.href).split("/")[4]}/>
+        </div>
       </div>
 
     </div>)

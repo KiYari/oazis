@@ -3,7 +3,6 @@ import {withStyles} from '@material-ui/core/styles';
 import {AppBar, Typography, Toolbar, IconButton} from '@material-ui/core';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import {Link} from 'react-router-dom'
-import Sidebar from './Sidebar';
 
 const useStyles = theme => ({
   icon: {
@@ -19,9 +18,8 @@ class Header extends React.Component {
   render() {
     const {classes} = this.props;
 
-    return (<AppBar position="relative">
+    return (<AppBar position="absolute">
       <Toolbar>
-        <Sidebar/>
         <Link to='/'>
           <IconButton>
             <YouTubeIcon className={classes.icon}/>
