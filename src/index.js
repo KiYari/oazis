@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 //:id
 ReactDOM.render(<Router>
   <Switch>
-    <Route exact="exact" path="/"><Redirect to="/video/9Il5H51_37o" /></Route>
+    <Route exact="exact" path="/"><Redirect to="/video/xHF2bm32f3Q" /></Route>
     <Route path="/video/:index"><Video/></Route>
     <Route><NotFound/></Route>
   </Switch>
