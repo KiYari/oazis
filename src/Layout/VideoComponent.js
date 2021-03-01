@@ -9,6 +9,13 @@ const useStyles = theme => ({
   cont: {
     marginLeft: 24,
     backgroundColor: 'red'
+  },
+  mainContainer: {
+    height: '100vh',
+    backgroundColor: 'green',
+  },
+  videoContainer: {
+
   }
 });
 
@@ -41,7 +48,7 @@ class VideoComponent extends React.Component {
         <Nav/>
       </Header>
       <div className={classes.mainContainer}>
-        <ReactPlayer width="50vw" height="50vh" url={'https://www.youtube.com/watch?v=' + (window.location.href).split("/")[4]}/>
+        <ReactPlayer width="100%" height="80%" url={'https://www.youtube.com/watch?v=' + (window.location.href).split("/")[4]}/>
       </div>
 
     </div>)
