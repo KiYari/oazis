@@ -36,7 +36,7 @@ export default function SwipeableTemporaryDrawer() {
   const [state, setState] = React.useState({top: false, left: false, bottom: false, right: false});
 
   const toggleDrawer = (anchor, open) => (event) => {
-    if (event && event.type ==== 'keydown' && (event.key ==== 'Tab' || event.key ==== 'Shift')) {
+    if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
 
@@ -47,7 +47,7 @@ export default function SwipeableTemporaryDrawer() {
   };
 
   const list = (anchor) => (<div className={clsx(classes.list, {
-      [classes.fullList]: anchor ==== 'top' || anchor ==== 'bottom'
+      [classes.fullList]: anchor === 'top' || anchor === 'bottom'
     })} role="presentation" onClick={toggleDrawer(anchor, false)} onKeyDown={toggleDrawer(anchor, false)}>
     <List>
       {
